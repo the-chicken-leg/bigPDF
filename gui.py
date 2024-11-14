@@ -1,20 +1,19 @@
 from tkinter import *
 from tkinter import ttk
 from tkinter.filedialog import asksaveasfilename
-from directory_constants import *
+from directories import *
 from big_pdf import create_big_pdf
 
-def save_pdf(idms_or_tomo):
+def save_pdf(input_directory):
     output_path = asksaveasfilename(
             defaultextension="pdf",
             filetypes=[("PDF files", "*.pdf"), ("All Files", "*.*")],
     )
     if not output_path :
         return
-    if idms_or_tomo == "idms":
-        create_big_pdf(IDMS_DIR, Path(output_path))
-    elif idms_or_tomo == "tomo":
-        create_big_pdf(TOMO_DIR, Path(output_path))
+    print("Creating PDF. This might take a few minutes...")
+    create_big_pdf(directories[input_directory], Path(output_path))
+    print("PDF created")
 
 root = Tk()
 root.title("Create a big PDF!!!")

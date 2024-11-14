@@ -1,6 +1,6 @@
 from pathlib import Path
 from pypdf import PdfWriter
-from directory_constants import *
+from directories import *
 
 def create_big_pdf(glob_dir, output_path):
     writer = PdfWriter()
@@ -29,5 +29,5 @@ if __name__ == "__main__":
     idms_output_path = Path(r"C:\PyLocal\big_pdf\iDMS.pdf")
     tomo_output_path = Path(r"C:\PyLocal\big_pdf\Tomo.pdf")
 
-    create_big_pdf(IDMS_DIR, idms_output_path)
-    create_big_pdf(TOMO_DIR, tomo_output_path)
+    create_big_pdf(directories["idms"], idms_output_path)
+    create_big_pdf(directories["tomo"], tomo_output_path)
