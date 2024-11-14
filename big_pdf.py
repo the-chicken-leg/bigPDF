@@ -12,12 +12,14 @@ def create_big_pdf(glob_dir, output_path):
         key=lambda file: file.name
     )
     glob_dedup = {path.name: path for path in glob_sort}
+    glob_dedup.pop("C-SVC-00186 CK Pre-Upgrade Configuration Checklist, 8.x-9.x to 10.x.pdf", None)     # this file destroys everything
 
-    for filepath in islice(glob_dedup.values(), 10):        # remove slice after testing
+    # for filepath in islice(glob_dedup.values(), 100):        # use for testing slices
+    for filepath in glob_dedup.values():
         try:
-            writer.append(fr"{str(filepath)}")
+            writer.append(fr"{str(filepath)}", import_outline=False)
         except:
-            continue        # just ignore a pdf if it causes an error, maybe there's a better way
+            continue        # just skip a pdf if it causes an error, maybe there's a better way
 
     for page in writer.pages:
         page.compress_content_streams(level=9)
@@ -27,9 +29,9 @@ def create_big_pdf(glob_dir, output_path):
         writer.write(output_file)
 
 if __name__ == "__main__":
-    ck_output_path = Path(r"C:\PyLocal\big_pdf\ck.pdf")
-    idms_output_path = Path(r"C:\PyLocal\big_pdf\idms.pdf")
-    tomo_output_path = Path(r"C:\PyLocal\big_pdf\tomo.pdf")
+    ck_output_path = Path(r"C:\Users\micha\Downloads\ck.pdf")
+    idms_output_path = Path(r"C:\Users\micha\Downloads\idms.pdf")
+    tomo_output_path = Path(r"C:\Users\micha\Downloads\tomo.pdf")
 
     create_big_pdf(DIRECTORIES["ck"], ck_output_path)
     create_big_pdf(DIRECTORIES["idms"], idms_output_path)
