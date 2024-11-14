@@ -3,4 +3,6 @@
 .vscode
 *.pyc
 __pycache__
-*.pdf
+dist
+build
+*.spec
