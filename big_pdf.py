@@ -26,8 +26,10 @@ def create_big_pdf(glob_dir, output_path):
         writer.write(output_file)
 
 if __name__ == "__main__":
-    idms_output_path = Path(r"C:\PyLocal\big_pdf\iDMS.pdf")
-    tomo_output_path = Path(r"C:\PyLocal\big_pdf\Tomo.pdf")
+    ck_output_path = Path(r"C:\PyLocal\big_pdf\ck.pdf")
+    idms_output_path = Path(r"C:\PyLocal\big_pdf\idms.pdf")
+    tomo_output_path = Path(r"C:\PyLocal\big_pdf\tomo.pdf")
 
-    create_big_pdf(directories["idms"], idms_output_path)
-    create_big_pdf(directories["tomo"], tomo_output_path)
+    create_big_pdf(DIRECTORIES["ck"], ck_output_path)
+    create_big_pdf(DIRECTORIES["idms"], idms_output_path)
+    create_big_pdf(DIRECTORIES["tomo"], tomo_output_path)
