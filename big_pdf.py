@@ -1,18 +1,18 @@
 from pathlib import Path
 from pypdf import PdfWriter
 from directories import *
+from pprint import pprint
 
 def create_big_pdf(glob_dir, output_path):
     writer = PdfWriter()
 
-    glob_sorted = tuple(
-        sorted(
-            glob_dir.glob("**/*-SVC-*.pdf"),
-            key=lambda file: file.name
-        )
+    glob_sort = sorted(
+        glob_dir.glob("**/*-SVC-*.pdf"),
+        key=lambda file: file.name
     )
+    glob_dedup = {path.name: path for path in glob_sort}
 
-    for pdf_path in glob_sorted[:10]:       # remove slice after testing
+    for pdf_path in glob_sort[:5]:       # remove slice after testing
         try:
             writer.append(fr"{str(pdf_path)}")
         except:
