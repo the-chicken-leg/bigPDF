@@ -1,6 +1,7 @@
 from tkinter import *
 from tkinter import ttk
 from tkinter.filedialog import asksaveasfilename
+from pathlib import Path
 from directories import DIRECTORIES
 from big_pdf import create_big_pdf
 
