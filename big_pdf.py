@@ -2,6 +2,7 @@ from pathlib import Path
 from pypdf import PdfWriter
 from directories import *
 from pprint import pprint
+from itertools import islice
 
 def create_big_pdf(glob_dir, output_path):
     writer = PdfWriter()
@@ -12,9 +13,9 @@ def create_big_pdf(glob_dir, output_path):
     )
     glob_dedup = {path.name: path for path in glob_sort}
 
-    for pdf_path in glob_sort[:5]:       # remove slice after testing
+    for filepath in islice(glob_dedup.values(), 10):        # remove slice after testing
         try:
-            writer.append(fr"{str(pdf_path)}")
+            writer.append(fr"{str(filepath)}")
         except:
             continue        # just ignore a pdf if it causes an error, maybe there's a better way
 
