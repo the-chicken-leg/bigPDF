@@ -4,7 +4,7 @@ Create a big PDF containing every work instruction in either the CyberKnife, iDM
 
 ![AccuraySynchronizedServiceDocuments](/images/sync_docs.png)
 
-Then you can search the big PDF for whatever you like. A table of contents is also created.
+Once the big PDF is created, you can search all work instructions at the same time. A table of contents is also created.
 
 ![Explorer](/images/explorer.png)
 
@@ -12,6 +12,6 @@ Then you can search the big PDF for whatever you like. A table of contents is al
 
 # How to make big PDFs
 
-Open the "Make big PDFs.exe" file. Windows Defender might warn about viruses.
+Open the "Make big PDFs.exe" file, and choose from which folder you would like to make a big PDF. Windows Defender might warn about viruses - there are no viruses.
 
 ![CLI](/images/command_line.png)
