@@ -8,7 +8,7 @@ With a big PDF, you can search all work instructions at the same time. A table o
 
 ![Output files](/images/output_files.png)
 
-Big PDFs are not small, but they function well enough.
+Big PDFs are not small, and they might stutter a bit when first opened, but they function well enough.
 
 ![Explorer](/images/explorer.png)
 
