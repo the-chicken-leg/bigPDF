@@ -14,7 +14,7 @@ Big PDFs are not small, but they function well enough.
 
 # Make big PDFs
 
-Open the "Make big PDFs.exe" file, and choose from which folder you would like to make a big PDF. You can run this program periodically to create new big-PDFs when work instructions are updated.
+Open the "big_pdf_maker.exe" file, and choose from which folder you would like to make a big PDF. You can run this program periodically to create new big-PDFs when work instructions are updated.
 
 ![CLI](/images/command_line.png)
 
