@@ -16,10 +16,10 @@ Big PDFs are not small, and they might stutter a bit when first opened, but they
 
 Open the "big_pdf_maker.exe" file, and choose from which folder you would like to make a big PDF. You can run this program periodically to create new big-PDFs when work instructions are updated.
 
-![CLI](/images/command_line.png)
+![CLI with no error](/images/CLI_no_error.png)
 
 If there an error when trying to add a file to the big PDF, you will be notified and the file will be skipped.
 
-![Bad files](/images/bad_files.png)
+![CLI with errors](/images/CLI_error.png)
 
 Windows Defender might warn about viruses - there are no viruses.
