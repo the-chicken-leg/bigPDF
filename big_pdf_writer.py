@@ -1,6 +1,6 @@
 from pathlib import Path
 from pypdf import PdfWriter
-from itertools import islice      # use for testing slices
+# from itertools import islice      # use for testing slices
 
 from directories import DIRECTORIES
 
@@ -14,8 +14,8 @@ def create_writer(glob_dir):
 
     writer = PdfWriter()
     added_to_big_pdf = []
-    for filepath in islice(glob_dedup.values(), 10):        # use for testing slices
-    # for filepath in glob_dedup.values():
+    # for filepath in islice(glob_dedup.values(), 10):        # use for testing slices
+    for filepath in glob_dedup.values():
         try:
             writer.append(fr"{str(filepath)}", import_outline=False)
             added_to_big_pdf.append(str(filepath.name) + "\n")
@@ -32,7 +32,7 @@ def compress_writer(writer):
     
     return writer
 
-def write_the_writer(writer, added_to_big_pdf, pdf_output_path):
+def write_writer(writer, added_to_big_pdf, pdf_output_path):
     with pdf_output_path.open(mode="wb") as output_file:
         writer.write(output_file)
 
@@ -48,10 +48,10 @@ if __name__ == "__main__":
     tomo_output_path = Path(r"C:\Users\mkoch\Downloads\tomo.pdf")
 
     writer, added_to_big_pdf = create_writer(DIRECTORIES["ck"])
-    write_the_writer(compress_writer(writer), added_to_big_pdf, ck_output_path)
+    write_writer(compress_writer(writer), added_to_big_pdf, ck_output_path)
 
     writer, added_to_big_pdf = create_writer(DIRECTORIES["idms"])
-    write_the_writer(compress_writer(writer), added_to_big_pdf, idms_output_path)
+    write_writer(compress_writer(writer), added_to_big_pdf, idms_output_path)
 
     writer, added_to_big_pdf = create_writer(DIRECTORIES["tomo"])
-    write_the_writer(compress_writer(writer), added_to_big_pdf, tomo_output_path)
+    write_writer(compress_writer(writer), added_to_big_pdf, tomo_output_path)

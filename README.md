@@ -18,4 +18,8 @@ Open the "big_pdf_maker.exe" file, and choose from which folder you would like t
 
 ![CLI](/images/command_line.png)
 
+If there an error when trying to add a file to the big PDF, you will be notified and the file will be skipped.
+
+![Bad files](/images/bad_files.png)
+
 Windows Defender might warn about viruses - there are no viruses.
