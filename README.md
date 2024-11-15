@@ -1,12 +1,12 @@
 # Big PDFs
 
-A big PDF contains every work instruction in either the "CyberKnife", "iDMS and Precision", or "TomoTherapy".
+A big PDF contains every work instruction in either the "CyberKnife", "iDMS and Precision", or "TomoTherapy" folders.
 
 ![AccuraySynchronizedServiceDocuments](/images/sync_docs.png)
 
 With a big PDF, you can search all work instructions at the same time. A table of contents is also created.
 
-![Output Files](/images/output_files.png)
+![Output files](/images/output_files.png)
 
 Big PDFs are not small, but they function well enough.
 
