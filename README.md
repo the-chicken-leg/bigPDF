@@ -6,9 +6,11 @@ Create a big PDF containing every work instruction in either the CyberKnife, iDM
 
 Once the big PDF is created, you can search all work instructions at the same time. A table of contents is also created.
 
-![Explorer](/images/explorer.png)
-
 ![Output Files](/images/output_files.png)
+
+Big PDFs are not small, but they function well enough.
+
+![Explorer](/images/explorer.png)
 
 # How to make big PDFs
 
