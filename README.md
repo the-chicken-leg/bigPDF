@@ -1,10 +1,10 @@
-# Make big PDFs
+# Big PDFs
 
-Create a big PDF containing every work instruction in either the CyberKnife, iDMS and Precision, or TomoTherapy folders within AccuraySynchronizedServiceDocuments.
+A big PDF contains every work instruction in either the "CyberKnife", "iDMS and Precision", or "TomoTherapy" folders within AccuraySynchronizedServiceDocuments.
 
 ![AccuraySynchronizedServiceDocuments](/images/sync_docs.png)
 
-Once the big PDF is created, you can search all work instructions at the same time. A table of contents is also created.
+With a big PDF, you can search all work instructions at the same time. A table of contents is also created.
 
 ![Output Files](/images/output_files.png)
 
@@ -12,8 +12,10 @@ Big PDFs are not small, but they function well enough.
 
 ![Explorer](/images/explorer.png)
 
-# How to make big PDFs
+# Make big PDFs
 
-Open the "Make big PDFs.exe" file, and choose from which folder you would like to make a big PDF. Windows Defender might warn about viruses - there are no viruses.
+Open the "Make big PDFs.exe" file, and choose from which folder you would like to make a big PDF. You can run this program periodically to create new big-PDFs when work instructions are updated.
 
 ![CLI](/images/command_line.png)
+
+Windows Defender might warn about viruses - there are no viruses.
