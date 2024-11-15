@@ -1,6 +1,6 @@
 # Big PDFs
 
-A big PDF contains every work instruction in either the "CyberKnife", "iDMS and Precision", or "TomoTherapy" folders within AccuraySynchronizedServiceDocuments.
+A big PDF contains every work instruction in either the "CyberKnife", "iDMS and Precision", or "TomoTherapy".
 
 ![AccuraySynchronizedServiceDocuments](/images/sync_docs.png)
 
