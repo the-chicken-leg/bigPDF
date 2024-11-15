@@ -1,8 +1,8 @@
 from pathlib import Path
 from pypdf import PdfWriter
-from directories import *
-from pprint import pprint
 from itertools import islice
+
+from directories import DIRECTORIES
 
 def create_big_pdf(glob_dir, output_path):
     writer = PdfWriter()
@@ -14,12 +14,12 @@ def create_big_pdf(glob_dir, output_path):
     glob_dedup = {path.name: path for path in glob_sort}
     glob_dedup.pop("C-SVC-00186 CK Pre-Upgrade Configuration Checklist, 8.x-9.x to 10.x.pdf", None)     # this file destroys everything
 
-    # for filepath in islice(glob_dedup.values(), 100):        # use for testing slices
-    for path in glob_dedup.values():
+    for path in islice(glob_dedup.values(), 10):        # use for testing slices
+    # for path in glob_dedup.values():
         try:
             writer.append(fr"{str(path)}", import_outline=False)
         except:
-            print(f"{path.name} is not a nice file. It was not added to big pdf.")      # just skip a file if it throws an exception
+            print(f"{path.name} is not a nice file. It was not added to big PDF.")
             continue
 
     for page in writer.pages:
