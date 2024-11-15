@@ -9,17 +9,18 @@ def create_big_pdf(glob_dir, output_path):
 
     glob_sort = sorted(
         glob_dir.glob("**/*-SVC-*.pdf"),
-        key=lambda file: file.name
+        key=lambda path: path.name
     )
     glob_dedup = {path.name: path for path in glob_sort}
     glob_dedup.pop("C-SVC-00186 CK Pre-Upgrade Configuration Checklist, 8.x-9.x to 10.x.pdf", None)     # this file destroys everything
 
     # for filepath in islice(glob_dedup.values(), 100):        # use for testing slices
-    for filepath in glob_dedup.values():
+    for path in glob_dedup.values():
         try:
-            writer.append(fr"{str(filepath)}", import_outline=False)
+            writer.append(fr"{str(path)}", import_outline=False)
         except:
-            continue        # just skip a pdf if it causes an error, maybe there's a better way
+            print(f"{path.name} is not a nice file. It was not added to big pdf.")      # just skip a file if it throws an exception
+            continue
 
     for page in writer.pages:
         page.compress_content_streams(level=9)
