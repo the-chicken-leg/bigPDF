@@ -40,18 +40,22 @@ def write_writer(writer, added_to_big_pdf, pdf_output_path):
     with contents_output_path.open(mode="w", encoding="utf-8") as output_file:
         output_file.writelines(added_to_big_pdf)
     
+def get_num_files(added_to_big_pdf):
     return len(added_to_big_pdf)
 
 if __name__ == "__main__":
-    ck_output_path = Path(r"C:\Users\mkoch\Downloads\ck.pdf")
-    idms_output_path = Path(r"C:\Users\mkoch\Downloads\idms.pdf")
-    tomo_output_path = Path(r"C:\Users\mkoch\Downloads\tomo.pdf")
+    ck_output_path = Path(r"C:\Users\micha\Downloads\ck.pdf")
+    idms_output_path = Path(r"C:\Users\micha\Downloads\idms.pdf")
+    tomo_output_path = Path(r"C:\Users\micha\Downloads\tomo.pdf")
 
     writer, added_to_big_pdf = create_writer(DIRECTORIES["ck"])
     write_writer(compress_writer(writer), added_to_big_pdf, ck_output_path)
+    print(f"number of ck files: {get_num_files(added_to_big_pdf)}")
 
     writer, added_to_big_pdf = create_writer(DIRECTORIES["idms"])
     write_writer(compress_writer(writer), added_to_big_pdf, idms_output_path)
+    print(f"number of idms files: {get_num_files(added_to_big_pdf)}")
 
     writer, added_to_big_pdf = create_writer(DIRECTORIES["tomo"])
     write_writer(compress_writer(writer), added_to_big_pdf, tomo_output_path)
+    print(f"number of tomo files: {get_num_files(added_to_big_pdf)}")
