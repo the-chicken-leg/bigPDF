@@ -2,7 +2,7 @@ from pathlib import Path
 from tkinter.filedialog import asksaveasfilename
 
 from directories import DIRECTORIES
-from big_pdf_writer import create_writer, compress_writer, write_writer, get_num_files
+from big_pdf_writer import create_writer, compress_writer, write_writer
 
 def main():
     input_directory = None
@@ -23,7 +23,7 @@ def get_filename_and_save(input_directory):
     print("\nCreating big PDF. This might take a few minutes...")
     writer, added_to_big_pdf = create_writer(DIRECTORIES[input_directory])
     write_writer(compress_writer(writer), added_to_big_pdf, Path(output_path))
-    num_files = get_num_files(added_to_big_pdf)
+    num_files = len(added_to_big_pdf)
     print(f"\nBig PDF created. {num_files} work instructions included.")
 
 main()
