@@ -1,17 +1,11 @@
 from pypdf import PdfWriter
 # from itertools import islice      # use for testing slices
 
-from directories import DIRECTORIES
-
 def create_writer(glob_dir):
     glob_sort = sorted(
-        glob_dir.glob("**/*.pdf"),
+        glob_dir.glob("**/*-SVC-*.pdf"),
         key=lambda filepath: filepath.name
     )
-    # glob_sort = sorted(
-    #     glob_dir.glob("**/*-SVC-*.pdf"),
-    #     key=lambda filepath: filepath.name
-    # )
     glob_dedup = {filepath.name: filepath for filepath in glob_sort}
     glob_dedup.pop("C-SVC-00186 CK Pre-Upgrade Configuration Checklist, 8.x-9.x to 10.x.pdf", None)     # this file destroys everything
 
