@@ -18,7 +18,7 @@ def get_filename_and_save(input_directory):
             defaultextension="pdf",
             filetypes=[("PDF files", "*.pdf"), ("All Files", "*.*")],
     )
-    if not output_path :
+    if not output_path:
         return
     print("\nCreating big PDF. This might take a few minutes...")
     writer, added_to_big_pdf = writers.create_writer(DIRECTORIES[input_directory])
