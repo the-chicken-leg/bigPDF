@@ -4,17 +4,21 @@ A big PDF contains every work instruction in either the "CyberKnife", "iDMS and 
 
 ![AccuraySynchronizedServiceDocuments](/images/sync_docs.png)
 
-With a big PDF, you can search all work instructions at the same time. A table of contents is also created.
+With a big PDF, you can search all work instructions at the same time.
 
-![Output files](/images/output_files.png)
+![Work Instruction](/images/work_instruction.jpg)
+
+A table of contents is also created.
+
+![Contents](/images/contents.jpg)
 
 Big PDFs are not small, and they might stutter a bit when first opened, but they function well enough.
 
-![Explorer](/images/explorer.png)
+![Explorer](/images/explorer.jpg)
 
 # Make big PDFs
 
-Open the "big_pdf_maker.exe" file, and choose from which folder you would like to make a big PDF. You can run this program periodically to create new big-PDFs when work instructions are updated.
+Open the "big_pdf_maker.exe" file, and choose from which folder you would like to make a big PDF. You can run this program periodically to create new big PDFs when work instructions are updated.
 
 ![CLI with no error](/images/CLI_no_error.png)
 
