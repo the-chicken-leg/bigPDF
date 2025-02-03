@@ -12,7 +12,7 @@ def main():
     input("Press Enter key to exit")
     print("Cleaning up...") 
 
-def get_filename_and_save(input_directory):
+def get_filename_and_save(input_directory: str):
     print("Select save location...")
     output_path = asksaveasfilename(
             defaultextension="pdf",

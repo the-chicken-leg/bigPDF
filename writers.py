@@ -1,9 +1,10 @@
 from pypdf import PdfWriter
+from pathlib import Path
 # from itertools import islice      # use for testing slices
 
-def create_writer(glob_dir):
+def create_writer(glob_dir: Path):
     glob_sort = sorted(
-        glob_dir.glob("**/*-SVC-*.pdf"),
+        glob_dir.rglob("*-SVC-*.pdf"),
         key=lambda filepath: filepath.name
     )
     glob_dedup = {filepath.name: filepath for filepath in glob_sort}
@@ -22,14 +23,14 @@ def create_writer(glob_dir):
 
     return writer, added_to_big_pdf
 
-def compress_writer(writer):
+def compress_writer(writer: PdfWriter):
     for page in writer.pages:
         page.compress_content_streams(level=9)
     writer.compress_identical_objects(remove_identicals=True, remove_orphans=True)
     
     return writer
 
-def write_writer(writer, added_to_big_pdf, pdf_output_path):
+def write_writer(writer: PdfWriter, added_to_big_pdf: list, pdf_output_path: Path):
     with pdf_output_path.open(mode="wb") as output_file:
         writer.write(output_file)
 
