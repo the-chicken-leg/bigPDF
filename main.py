@@ -26,4 +26,5 @@ def get_filename_and_save(input_directory):
     num_files = len(added_to_big_pdf)
     print(f"\nBig PDF created. {num_files} work instructions included.")
 
-main()
+if __name__ == "__main__":
+    main()
